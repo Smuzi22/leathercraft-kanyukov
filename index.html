@@ -2,7 +2,8 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <link rel="preload" as="image" href="images/cardholder-classic.png" fetchpriority="high" />
   <meta name="description" content="LEATHERCRAFT by KANYUKOV — брендовые изделия из натуральной кожи ручной работы." />
   <title>LEATHERCRAFT by KANYUKOV</title>
 
@@ -347,9 +348,7 @@
       object-position:var(--photo-position, center);
       padding:0;
       transition:transform .9s var(--ease),filter .7s var(--ease);
-      will-change:transform,filter;
       mix-blend-mode:multiply;
-      animation:photoBreath 7s ease-in-out infinite;
     }
 
     /* Наведение только запускает мягкий перелив — карточка не открывается */
@@ -741,6 +740,23 @@
       }
       .reveal{opacity:1;transform:none}
     }
+  
+    @media (max-width:700px){
+      .nav{
+        backdrop-filter:none;
+        -webkit-backdrop-filter:none;
+        background:rgba(255,253,249,.96);
+      }
+      .step{
+        backdrop-filter:none;
+      }
+      .work-card img{
+        animation:none !important;
+        transition:none;
+      }
+      .work-card::before{display:none}
+    }
+
   </style>
 </head>
 <body>
@@ -790,8 +806,7 @@
     <section class="works" id="works">
       <div class="container">
         <div class="works-video reveal">
-          <video autoplay muted loop playsinline preload="metadata" aria-label="Видео LEATHERCRAFT by KANYUKOV">
-            <source src="leathercraft.mp4" type="video/mp4">
+          <video id="worksVideo" muted loop playsinline preload="none" controlslist="nodownload noplaybackrate" aria-label="Видео LEATHERCRAFT by KANYUKOV">
             Ваш браузер не поддерживает воспроизведение видео.
           </video>
           <div class="works-video__content">
@@ -809,7 +824,7 @@
 
         <div class="gallery">
           <article class="work-card reveal" data-description="Лаконичная форма и ручная прошивка.">
-            <img src="images/cardholder-classic.png" alt="Классический кожаный кардхолдер" loading="lazy" />
+            <img src="images/cardholder-classic.png" alt="Классический кожаный кардхолдер" loading="lazy" decoding="async" />
             <div class="work-card__caption">
               <div><h3>Классический картхолдер</h3><p>Лаконичная форма и ручная прошивка</p></div>
               <span class="work-card__num">01</span>
@@ -819,7 +834,7 @@
           <article class="work-card reveal" data-description="Итальянская кожа Pueblo. 
 Практичный формат. 
 Цвет: Prugna.">
-            <img src="images/bag-banana2.png" alt="Сумка-бананка из итальянской кожи Pueblo" loading="lazy" />
+            <img src="images/bag-banana2.png" alt="Сумка-бананка из итальянской кожи Pueblo" loading="lazy" decoding="async" />
             <div class="work-card__caption">
               <div><h3>Сумка (бананка)</h3><p>Практичный формат. Размер S</p></div>
               <span class="work-card__num">02</span>
@@ -827,7 +842,7 @@
           </article>
 
           <article class="work-card reveal" data-description="Измененная модель компактного кошелька с дополнительным карманом под наличные. Итальянская кожа от известной фабрики Badalassi Carlo.">
-            <img src="images/wallet-cash.png" alt="Компактный кожаный кошелёк с карманом под наличные" loading="lazy" />
+            <img src="images/wallet-cash.png" alt="Компактный кожаный кошелёк с карманом под наличные" loading="lazy" decoding="async" />
             <div class="work-card__caption">
               <div><h3>Компактные кошельки</h3><p>Продуманное хранение карт и наличных</p></div>
               <span class="work-card__num">03</span>
@@ -835,7 +850,7 @@
           </article>
 
           <article class="work-card reveal" data-description="Выразительная фактура итальянской кожи">
-            <img src="images/wallet-pueblo.png" alt="Компактный кошелёк из кожи Pueblo" loading="lazy" />
+            <img src="images/wallet-pueblo.png" alt="Компактный кошелёк из кожи Pueblo" loading="lazy" decoding="async" />
             <div class="work-card__caption">
               <div><h3>Вертикальный кошелёк</h3><p>Вертикальный формат с дополнительным карманом под наличные</p></div>
               <span class="work-card__num">04</span>
@@ -843,7 +858,7 @@
           </article>
 
           <article class="work-card reveal" data-description="Итальянская кожа от известной фабрики Badalassi Carlo. Основа - Российская кожа с тиснением БУФФАЛО">
-            <img src="images/wallet-vertical.png" alt="Компактный вертикальный кожаный кошелёк" loading="lazy" />
+            <img src="images/wallet-vertical.png" alt="Компактный вертикальный кожаный кошелёк" loading="lazy" decoding="async" />
             <div class="work-card__caption">
               <div><h3>Кошелёк из кожи с тиснением</h3><p>Компактность без лишних деталей</p></div>
               <span class="work-card__num">05</span>
@@ -851,7 +866,7 @@
           </article>
 
           <article class="work-card reveal" data-description="Фактурная кожа и характерный винтажный эффект.">
-            <img src="images/wallet-crazy-horse.png" alt="Вертикальный кошелёк из кожи Crazy Horse" loading="lazy" />
+            <img src="images/wallet-crazy-horse.png" alt="Вертикальный кошелёк из кожи Crazy Horse" loading="lazy" decoding="async" />
             <div class="work-card__caption">
               <div><h3>Вертикальный картхолдер</h3><p>Уникальный дизайн</p></div>
               <span class="work-card__num">06</span>
@@ -859,7 +874,7 @@
           </article>
 
           <article class="work-card reveal" data-description="Классический кошелёк бифолд в вертикальном формате">
-            <img src="images/hero-wallet.png" alt="Вертикальный кошелёк бифолд" loading="lazy" />
+            <img src="images/hero-wallet.png" alt="Вертикальный кошелёк бифолд" loading="lazy" decoding="async" />
             <div class="work-card__caption">
               <div><h3>Кошельки бифолд</h3><p>Классическая конструкция в авторском исполнении</p></div>
               <span class="work-card__num">07</span>
@@ -868,7 +883,7 @@
 
           <article class="work-card reveal">
             
-            <img src="images/wallet-pueblodop.png" alt="Компактный вертикальный кошелёк с полным клапаном под наличные" loading="lazy" />
+            <img src="images/wallet-pueblodop.png" alt="Компактный вертикальный кошелёк с полным клапаном под наличные" loading="lazy" decoding="async" />
             <div class="work-card__caption">
               <div><h3>Компактный вертикальный кошелёк</h3><p>Практичная структура хранения</p></div>
               <span class="work-card__num">08</span>
@@ -877,7 +892,7 @@
 
           <article class="work-card reveal">
     
-            <img src="images/docholder-classic.png" alt="Внутренний отдел под паспорт,внешние это три отделения под карточки и одно большое под авто документы" loading="lazy" />
+            <img src="images/docholder-classic.png" alt="Внутренний отдел под паспорт,внешние это три отделения под карточки и одно большое под авто документы" loading="lazy" decoding="async" />
             <div class="work-card__caption">
               <div><h3>Докхолдер</h3><p>Выполнен из итальянской кожи Pueblo</p></div>
               <span class="work-card__num">09</span>
@@ -1008,6 +1023,45 @@
     });
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Быстрая загрузка: видео подключается только перед появлением на экране.
+    const worksVideo = document.getElementById('worksVideo');
+    const worksVideoBox = document.querySelector('.works-video');
+
+    function loadWorksVideo() {
+      if (!worksVideo || worksVideo.dataset.loaded === '1') return;
+      const source = document.createElement('source');
+      source.src = 'leathercraft.mp4';
+      source.type = 'video/mp4';
+      worksVideo.appendChild(source);
+      worksVideo.dataset.loaded = '1';
+      worksVideo.load();
+    }
+
+    if (worksVideo && worksVideoBox && 'IntersectionObserver' in window) {
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            loadWorksVideo();
+            // На смартфонах не запускаем тяжёлое видео автоматически.
+            if (window.matchMedia('(min-width: 701px)').matches && !prefersReducedMotion) {
+              worksVideo.play().catch(() => {});
+            }
+          } else if (worksVideo.dataset.loaded === '1') {
+            worksVideo.pause();
+          }
+        });
+      }, { rootMargin: '300px 0px', threshold: 0.01 });
+      videoObserver.observe(worksVideoBox);
+    } else {
+      loadWorksVideo();
+    }
+
+    // На мобильных устройствах показываем видео только по нажатию Play.
+    if (worksVideo && window.matchMedia('(max-width: 700px)').matches) {
+      worksVideo.setAttribute('controls', '');
+    }
+
 
     if (!prefersReducedMotion && 'IntersectionObserver' in window) {
       const observer = new IntersectionObserver((entries) => {
