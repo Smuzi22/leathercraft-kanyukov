@@ -364,8 +364,12 @@
     @keyframes cardSheen{from{transform:translateX(-42%) rotate(18deg)}to{transform:translateX(42%) rotate(18deg)}}
     @keyframes photoBreath{0%,100%{transform:scale(1)}50%{transform:scale(1.008)}}
 
+    .gallery .work-card.reveal{
+      opacity:1;
+      transform:none;
+    }
     .work-card.reveal img{
-      opacity:.82;
+      opacity:1;
       transform:scale(1);
       transition:opacity .9s var(--ease),transform 1.1s var(--ease),filter .55s var(--ease);
     }
