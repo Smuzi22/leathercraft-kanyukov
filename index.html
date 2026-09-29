@@ -3,12 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="images/cardholder-classic.png" fetchpriority="high" />
   <meta name="description" content="LEATHERCRAFT by KANYUKOV — брендовые изделия из натуральной кожи ручной работы." />
-  <title>LEATHERCRAFT by KANYUKOV</title>
+  <title>LEATHERCRAF T by KANYUKOV</title>
 
   <style>
     :root{
@@ -80,16 +77,13 @@
 
     h1,h2,h3{
       margin:0;
-      font-family:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+      font-family:Georgia,"Times New Roman",serif;
       font-weight:500;
-      letter-spacing:-.015em;
+      letter-spacing:-.035em;
     }
     h1{
-      font-family:"Cormorant Garamond", Georgia, serif;
-      font-size:clamp(4rem,8.2vw,8.8rem);
-      font-weight:500;
-      line-height:.88;
-      letter-spacing:-.01em;
+      font-size:clamp(3.4rem,8vw,8.6rem);
+      line-height:.86;
     }
     h2{
       font-size:clamp(2.5rem,5vw,5.2rem);
@@ -206,13 +200,12 @@
     }
 
     .hero__copy{
-      display:block;
-      color:var(--wine);
-      font-family:"Cormorant Garamond", Georgia, serif;
-      font-style:italic;
-      font-weight:500;
-      letter-spacing:0;
-      margin-top:8px;
+      position:relative;
+      z-index:2;
+      width:100%;
+      max-width:980px;
+      margin-inline:auto;
+      text-align:center;
     }
 
     .hero__copy .eyebrow{
@@ -220,34 +213,31 @@
     }
 
     .hero__copy h1{
-      font-family: "Manrope", sans-serif;
-      font-weight: 700;
-      font-size: clamp(58px, 8vw, 118px);
-      line-height: 0.95;
-      letter-spacing: -0.035em;
-      text-align: center;
-      color: var(--ink);
-      margin: 0;
+      width:100%;
+      text-align:center;
     }
 
     .hero__copy h1 span{
-      display: block;
-      margin-top: 12px;
-      font-family: "Manrope", sans-serif;
-      font-weight: 500;
-      font-size: 0.48em;
+      display:block;
+      color:var(--wine);
+      font-style:italic;
+      transform:none;
     }
-    
-    .hero__text {
-      font-family: "Manrope", sans-serif;
-      font-size: 18px;
-      line-height: 1.7;
+
+    .hero__text{
+      max-width:760px;
+      margin:28px auto 0;
+      font-size:1.08rem;
     }
-    
-    .hero__actions .btn {
-      font-family: "Manrope", sans-serif;
+
+    .hero__actions{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:14px;
+      margin-top:34px;
     }
-    
+
     .btn{
       display:inline-flex;
       align-items:center;
@@ -728,11 +718,7 @@
     @media (max-width: 620px){
       .container{width:min(100% - 26px,1180px)}
       section{padding:78px 0}
-      h1{
-        font-size:clamp(3rem,15vw,5.2rem); 
-        line-height:.9;
-        letter-spacing:-.005em;
-      }
+      h1{font-size:clamp(3rem,16vw,5.2rem)} h2{font-size:clamp(2.25rem,11vw,3.5rem)} h3{font-size:1.3rem}
       .hero{padding:108px 0 56px}.hero__grid{gap:34px}.hero__text{font-size:1rem}
       .hero__actions{flex-direction:column;gap:10px}.hero__actions .btn{width:100%}
       .section-head{display:block;margin-bottom:30px}.section-head p{margin-top:16px}
